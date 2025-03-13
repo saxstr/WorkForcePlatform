@@ -1,0 +1,175 @@
+/* src/components/LoginSelection.css */
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap');
+
+.login-selection-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f8f8f8;
+  font-family: 'Tajawal', sans-serif;
+  direction: rtl;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Background pattern with hexagons */
+.background-pattern {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.hexagon-svg {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.5;
+}
+
+.geometric-shapes {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.hexagon {
+  position: absolute;
+  background: linear-gradient(135deg, rgba(230, 230, 230, 0.5) 0%, rgba(230, 230, 230, 0.1) 100%);
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+}
+
+.hexagon-1 {
+  top: -50px;
+  right: -50px;
+  width: 400px;
+  height: 400px;
+  transform: rotate(-15deg);
+}
+
+.hexagon-2 {
+  bottom: 50px;
+  right: 150px;
+  width: 300px;
+  height: 300px;
+  transform: rotate(20deg);
+}
+
+.hexagon-3 {
+  top: 40%;
+  left: 10%;
+  width: 200px;
+  height: 200px;
+  transform: rotate(45deg);
+  opacity: 0.3;
+}
+
+.login-selection-card {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  width: 90%;
+  max-width: 1000px;
+  padding: 30px;
+  position: relative;
+  z-index: 1;
+}
+
+.logo-section {
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 20px;
+}
+
+.vision-logo {
+  height: 60px;
+}
+
+.content-section {
+  text-align: center;
+}
+
+.welcome-text {
+  color: #333;
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+}
+
+.welcome-description {
+  color: #666;
+  margin-bottom: 40px;
+}
+
+.selection-buttons {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.button-card {
+  flex: 1;
+  min-width: 250px;
+  border: 1px solid #eaeaea;
+  border-radius: 10px;
+  padding: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: center;
+  background-color: white;
+}
+
+.button-card:hover {
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+}
+
+.button-title {
+  color: #14b8a6;
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+.button-title1 {
+    color: #1B75BA;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+.button-description {
+  color: #666;
+  font-size: 0.9rem;
+  min-height: 40px;
+}
+
+.login-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  color: #333;
+  margin-top: 15px;
+  padding: 5px;
+  border-top: 1px solid #eaeaea;
+}
+
+.arrow {
+  font-size: 1.2rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .selection-buttons {
+    flex-direction: column;
+  }
+  
+  .button-card {
+    margin-bottom: 15px;
+  }
+}

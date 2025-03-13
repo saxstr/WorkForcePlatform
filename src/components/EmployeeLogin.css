@@ -1,0 +1,269 @@
+/* EmployeeLogin.css */
+.login-page {
+    display: flex;
+    min-height: 100vh;
+    background-color: #f7f7f7;
+    font-family: Arial, sans-serif;
+  }
+  
+  .login-container {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Left side - Login Form */
+  .login-form-container {
+    flex: 1;
+    background-color: white;
+    padding: 20px 40px;
+    display: flex;
+    flex-direction: column;
+    max-width: 1000px;
+  }
+  
+  .login-header {
+    padding: 20px 0;
+  }
+  
+  .back-button {
+    display: flex;
+    align-items: center;
+    background: none;
+    border: none;
+    color: #718096;
+    cursor: pointer;
+    font-size: 14px;
+  }
+  
+  .back-arrow {
+    margin-right: 8px;
+    transform: scaleX(-1); /* Flip arrow for RTL */
+  }
+  
+  .login-form-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-grow: 1;
+    max-width: 400px;
+    margin: 0 auto;
+    padding-bottom: 40px;
+  }
+  
+  .login-title {
+    color: #2D3748;
+    font-size: 28px;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  
+  .login-subtitle {
+    color: #718096;
+    font-size: 14px;
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  
+  .login-form {
+    width: 100%;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  .form-group label {
+    display: block;
+    font-size: 14px;
+    color: #4A5568;
+    margin-bottom: 8px;
+    text-align: right;
+  }
+  
+  .form-group input {
+    width: 100%;
+    padding: 10px 15px;
+    border: 1px solid #E2E8F0;
+    border-radius: 4px;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+  
+  .form-group input:focus {
+    border-color: #4299E1;
+  }
+  
+  .password-input-wrapper {
+    position: relative;
+  }
+  
+  .password-requirements {
+    position: absolute;
+    left: 0;
+    bottom: -20px;
+    font-size: 12px;
+    color: #A0AEC0;
+  }
+  
+  .toggle-password {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .form-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 25px 0;
+  }
+  
+  .remember-me {
+    display: flex;
+    align-items: center;
+  }
+  
+  /* Custom checkbox */
+  .checkbox-container {
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding-left: 25px;
+    cursor: pointer;
+    font-size: 14px;
+    color: #718096;
+  }
+  
+  .checkbox-container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+  
+  .checkmark {
+    position: absolute;
+    left: 0;
+    top: 2px;
+    height: 16px;
+    width: 16px;
+    background-color: white;
+    border: 1px solid #CBD5E0;
+    border-radius: 3px;
+  }
+  
+  .checkbox-container input:checked ~ .checkmark {
+    background-color: #4FD1C5;
+    border-color: #4FD1C5;
+  }
+  
+  .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+  
+  .checkbox-container input:checked ~ .checkmark:after {
+    display: block;
+    left: 5px;
+    top: 2px;
+    width: 3px;
+    height: 7px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+  }
+  
+  .forgot-password {
+    color: #4FD1C5;
+    font-size: 14px;
+    text-decoration: none;
+  }
+  
+  .login-button1 {
+    width: 100%;
+    padding: 12px;
+    background: linear-gradient(90deg, #54d5c8 0%, #63B3ED 100%);
+    border: none;
+    border-radius: 4px;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: opacity 0.2s;
+  }
+  
+  .login-button:hover {
+    opacity: 0.9;
+  }
+  
+  /* Right side - Branding */
+  .branding-container1 {
+    flex: 1;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    padding: 10px;
+    overflow: hidden; /* Keep this to prevent content overflow */
+    z-index: 1; /* Ensure proper stacking context */
+  }
+  
+  /* Main gradient background with curve */
+  .branding-container1::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(180deg, #90CDF4 0%, #B2F5EA 100%);
+    border-bottom-left-radius: 50% 20%;
+    z-index: -1; /* Place behind content */
+    box-shadow: -5px 0px 15px rgba(0, 0, 0, 0.128);
+  }
+
+
+  .ministry-logo {
+    max-width: 200px;
+    margin-bottom: 20px;
+  }
+  
+  .tagline {
+    position: absolute;
+    bottom: 40px;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .login-container {
+      flex-direction: column-reverse;
+      height: auto;
+    }
+    
+    .branding-container {
+      height: 200px;
+    }
+    
+    .login-form-container {
+      max-width: 100%;
+      padding: 20px;
+    }
+  }
