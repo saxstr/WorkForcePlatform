@@ -79,9 +79,7 @@ function ManagerLogin() {
 
               <button type="submit" className="login-button">دخول المدير</button>
               
-              <div className="help-section">
-                <a href="#" className="help-link">تحتاج مساعدة؟ تواصل مع الدعم الفني</a>
-              </div>
+             
             </form>
           </div>
         </div>

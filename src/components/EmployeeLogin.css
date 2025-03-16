@@ -16,7 +16,7 @@
   
   /* Left side - Login Form */
   .login-form-container {
-    flex: 1;
+    flex: 2;
     background-color: white;
     padding: 20px 40px;
     display: flex;
@@ -218,7 +218,7 @@
     justify-content: center;
     align-items: center;
     color: white;
-    padding: 10px;
+    padding: 1px;
     overflow: hidden; /* Keep this to prevent content overflow */
     z-index: 1; /* Ensure proper stacking context */
   }
@@ -231,7 +231,7 @@
     right: 0;
     bottom: 0;
     left: 0;
-    background: linear-gradient(180deg, #90CDF4 0%, #B2F5EA 100%);
+    background: linear-gradient(180deg, #5C86C7 0%, #62C3B6 100%);
     border-bottom-left-radius: 50% 20%;
     z-index: -1; /* Place behind content */
     box-shadow: -5px 0px 15px rgba(0, 0, 0, 0.128);
