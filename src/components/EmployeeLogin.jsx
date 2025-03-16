@@ -9,7 +9,7 @@ function EmployeeLogin() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Add your login logic here
+ 
   };
 
   return (
