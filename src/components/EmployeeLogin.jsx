@@ -1,6 +1,8 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useState } from 'react';
 import './EmployeeLogin.css';
+import educationLogo from "../Assets/educationLogo-white.png"; 
+
 
 function EmployeeLogin() {
   const [email, setEmail] = useState('');
@@ -81,11 +83,11 @@ function EmployeeLogin() {
 
         {/* Right side - Branding */}
         <div className="branding-container1">
-          <img 
-            src="/assets/educationLogo-white.png" 
-            alt="Ministry of Education Logo" 
-            className="ministry-logo"
-          />
+             <img 
+              src={educationLogo} 
+              alt="Ministry of Education Logo" 
+              className="ministry-logo"
+            />
           <div className="tagline">معاً نحو مستقبل رقمي واعد</div>
         </div>
       </div>

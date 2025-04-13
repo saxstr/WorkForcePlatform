@@ -9,21 +9,21 @@ const TaskConfirm = () => {
   useEffect(() => {
     const storedData = JSON.parse(localStorage.getItem("tasksData"));
     if (storedData) {
-      setTasksData(storedData); // تحميل البيانات المخزنة في حالة وجودها
+      setTasksData(storedData); 
     } else {
-      navigate("/tasks"); // العودة إلى صفحة المهام إذا لم توجد بيانات
+      navigate("/tasks"); 
     }
   }, [navigate]);
 
   const handleSave = () => {
     alert("تم حفظ البيانات");
-    localStorage.removeItem("tasksData"); // حذف البيانات المخزنة بعد الحفظ
+    localStorage.removeItem("tasksData"); 
   };
 
   const handlePrevious = () => {
     localStorage.setItem("tasksData", JSON.stringify(tasksData)); 
 
-    navigate("/tasks"); // العودة إلى صفحة المهام
+    navigate("/dashboard/tasks"); 
   };
 
   return (

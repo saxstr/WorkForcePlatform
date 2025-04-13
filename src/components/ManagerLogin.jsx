@@ -1,6 +1,8 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useState } from 'react';
 import './ManagerLogin.css';
+import educationLogo from "../Assets/educationLogo-white.png"; // استيراد الصورة بشكل صحيح
+
 
 function ManagerLogin() {
   const [email, setEmail] = useState('');
@@ -86,11 +88,12 @@ function ManagerLogin() {
 
         {/* Right side - Branding */}
         <div className="branding-container">
-          <img 
-            src="/assets/educationLogo-white.png" 
-            alt="Ministry of Education Logo" 
-            className="ministry-logo"
-          />
+             <img 
+              src={educationLogo} 
+              alt="Ministry of Education Logo" 
+              className="ministry-logo"
+            />
+
           <div className="manager-badge">بوابة المدراء</div>
           <div className="tagline">إدارة التعليم نحو مستقبل رقمي متميز</div>
         </div>

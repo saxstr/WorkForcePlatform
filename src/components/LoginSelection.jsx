@@ -2,6 +2,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import './LoginSelection.css';
+import visionLogo from "../Assets/ministryOfEducationLogo.png";
 
 const LoginSelection = () => {
   const navigate = useNavigate();
@@ -12,8 +13,7 @@ const LoginSelection = () => {
 
       <div className="login-selection-card">
         <div className="logo-section">
-        <img src="\Assets\ministryOfEducationLogo.png" alt="Vision 2030 Logo" className="vision-logo" />
-
+        <img src={visionLogo} alt="Vision 2030 Logo" className="vision-logo" />
         </div>
 
         <div className="content-section">

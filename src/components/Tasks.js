@@ -1,13 +1,23 @@
-import React, { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom"; // استيراد useNavigate للتنقل بين الصفحات
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom"; 
 import "./Tasks.css";
+
+// Define frequency values for different task types
+const frequencyValues = {
+  "يومي": 5,
+  "أسبوعي": 25,
+  "شهري": 154,
+  "ربعي": 420,
+  "نصف سنوي": 630,
+  "سنوي": 1023
+};
 
 const Tasks = () => {
   const [tasks, setTasks] = useState([
     { mainOp: "", subOp: "", weight: "", duration: "", frequency: "", repeat: "" },
   ]);
 
-  const navigate = useNavigate(); // للتنقل بين الصفحات
+  const navigate = useNavigate(); 
 
   const handleChange = (index, event) => {
     const newTasks = [...tasks];
@@ -24,21 +34,29 @@ const Tasks = () => {
     ]);
   };
   const handleNext = () => {
-    // تحقق من أن جميع الحقول تم تعبئتها
     for (let i = 0; i < tasks.length; i++) {
       const task = tasks[i];
+  
+      // Check if all required fields are filled
       if (!task.mainOp || !task.subOp || !task.duration || !task.frequency || !task.repeat) {
         alert("يرجى تعبئة جميع الحقول");
-        return; // إيقاف تنفيذ الوظيفة حتى يتم تعبئة جميع الحقول
+        return; 
+      }
+      // Calculate actual frequency and check if it exceeds allowed limit
+      const actualFrequency = parseInt(task.duration) * parseInt(task.repeat);
+      const maxAllowedFrequency = frequencyValues[task.frequency];
+  
+      if (actualFrequency > maxAllowedFrequency) {
+        alert("خطأ: الرجاء التاكد من ادخال البيانات (تكرار العمليات /الوقت المستغرق للعملية الواحدة");
+        return; 
       }
     }
   
-    // إذا كانت جميع الحقول معبأة، سيتم حفظ البيانات
     localStorage.setItem("tasksData", JSON.stringify(tasks));
-    navigate("/taskconfirm"); // الانتقال إلى صفحة التأكيد
+    navigate("/dashboard/task-confirm");
   };
   
-  // المهام الرئيسية
+    // List of main operations
   const mainOperations = [
     "رصد المبكرللسلوكيات والظواهرالفكرية  في إدارة التعليم العامة والوحدات التنظيمية التابعة لها ودراسة مسبباتها واقتراح الأساليب المناسبة لمعالجتها والتعامل معها.",
     "رفع تقارير دورية لمدير عام التعليم أو الرفع الفوري عند الحاجة . في حالات المخالفات الفكرية أو السلوكية المرتبطة بها، وتقديم التوصيات المناسبة",
@@ -53,7 +71,7 @@ const Tasks = () => {
     "التقيد بنماذج العمل (نماذج التقارير بأنواعها، الخطط السنوية للبرامج نماذج الرصد نماذج المعالجات، وغيرها). المعدة من قبل الإدارة العامة للوعي الفكري بالوزارة ",
   ];
 
-  // المهام الداخلية لكل عملية رئيسية
+    // Sub-operations for each main operation
   const subOperations = {
     "رصد المبكرللسلوكيات والظواهرالفكرية  في إدارة التعليم العامة والوحدات التنظيمية التابعة لها ودراسة مسبباتها واقتراح الأساليب المناسبة لمعالجتها والتعامل معها." :[
     "توثيق المخالفات الفكرية أو السلوكية والظواهر السلبية",    
@@ -157,7 +175,7 @@ const Tasks = () => {
                 <input
                   type="number"
                   name="duration"
-                  placeholder="أدخل الوقت بالساعات"
+                  placeholder="أدخل الوقت المستغرق"
                   value={task.duration}
                   onChange={(e) => handleChange(index, e)}
                 />
@@ -169,9 +187,11 @@ const Tasks = () => {
                   onChange={(e) => handleChange(index, e)}
                 >
                   <option value="">اختر التردد</option>
+                  <option value="يومي">يومي</option>
                   <option value="أسبوعي">أسبوعي</option>
                   <option value="شهري">شهري</option>
                   <option value="ربعي">ربعي</option>
+                  <option value="نصفي">نصفي</option>
                   <option value="سنوي">سنوي</option>
                 </select>              </td>
               <td>
@@ -180,7 +200,7 @@ const Tasks = () => {
                   name="repeat"
                   value={task.repeat}
                   onChange={(e) => handleChange(index, e)}
-                  placeholder="أدخل عدد التكرارات"
+                  placeholder="أدخل عدد التكرار"
                 />
               </td>
             </tr>
