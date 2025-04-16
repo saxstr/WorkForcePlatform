@@ -108,7 +108,7 @@
 }
 
 .content-area {
-  margin-left: 50; /* ⬅️ Push content to the right of sidebar */
+  margin-right: 200px; /* ⬅️ Push content to the right of sidebar */
   padding: 20px;
   width: calc(100% - 100); /* ⬅️ Ensure it doesn’t overflow */
 }
