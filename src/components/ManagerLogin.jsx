@@ -1,7 +1,8 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useState } from 'react';
 import './ManagerLogin.css';
-import educationLogo from "../Assets/educationLogo-white.png"; // استيراد الصورة بشكل صحيح
+import { useNavigate } from 'react-router-dom'; 
+import educationLogo from "../Assets/educationLogo-white.png"; 
 
 
 function ManagerLogin() {
@@ -9,10 +10,10 @@ function ManagerLogin() {
   const [password, setPassword] = useState('');
   const [rememberMe, setRememberMe] = useState(false);
 
-
+  const navigate = useNavigate();
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Add your manager login logic here
+    navigate("/dashboard");
   };
 
   return (

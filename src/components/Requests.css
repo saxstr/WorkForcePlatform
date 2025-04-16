@@ -1,0 +1,42 @@
+.requests-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin-left: 100px; 
+  padding: 20px;
+  box-sizing: border-box;
+  gap: 20px;
+}
+
+.request-box {
+  width: 300px;
+  height: 60px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 20px;
+  background-color: #f1f1f1;
+  border-radius: 8px;
+  cursor: pointer;
+  text-align: center;
+  font-weight: bold;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  padding-left: 8px; /* Align the text and icon */
+}
+
+.request-box:hover {
+  background-color: #4CAF50;
+  color: white;
+  box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+.request-box i {
+  margin-right: 40px; /* Space between the icon and the text */
+}
+
+.request-box span {
+  margin-left: 200px; /* Space between the text and the icon */
+}

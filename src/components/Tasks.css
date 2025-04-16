@@ -1,7 +1,7 @@
 /* Adjust the space between the sidebar and the table */
 .tasks-container {
-    width: calc(100% - 320px); /* Subtract the sidebar width from the content width */
-    padding: 10px;
+    width: calc(100% - 100px); 
+  padding-right: 100px;
     margin-right: 0; /* Ensure no gap between sidebar and content */
 }
 
@@ -37,10 +37,6 @@
     border-right: 1px solid #ddd; /* Border between columns */
 }
 
-/* Remove the border between the last column and the outer boundary */
-.tasks-table th:last-child, .tasks-table td:last-child {
-    border-right: none;
-}
 
 /* Add a border between rows */
 .tasks-table tbody tr {
@@ -134,8 +130,8 @@ select:hover {
 }
 
 /* Style for the previous and save buttons */
-.previous-button, .save-button {
-    width: 150px;
+.save-button {
+    width: 120px;
     padding: 10px;
     background-color: #4abe65; 
     color: white;
@@ -146,6 +142,20 @@ select:hover {
     border: none;
     transition: background-color 0.3s ease-in-out;
 }
+.previous-button {
+    width: 120px; 
+    padding: 8px; 
+    background-color: #4abe65;
+    color: white;
+    border-radius: 5px;
+    text-align: center;
+    cursor: pointer;
+    font-size: 16px; 
+    border: none;
+    transition: background-color 0.3s ease-in-out;
+    margin-top: 280px;
+}
+
 
 .previous-button:hover, .save-button:hover {
     background-color: #218838;

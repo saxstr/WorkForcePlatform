@@ -1,5 +1,6 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom'; 
 import './EmployeeLogin.css';
 import educationLogo from "../Assets/educationLogo-white.png"; 
 
@@ -9,9 +10,10 @@ function EmployeeLogin() {
   const [password, setPassword] = useState('');
   const [rememberMe, setRememberMe] = useState(false);
 
+  const navigate = useNavigate();
   const handleSubmit = (e) => {
     e.preventDefault();
- 
+    navigate("/dashboard");
   };
 
   return (

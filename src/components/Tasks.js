@@ -13,12 +13,13 @@ const frequencyValues = {
 };
 
 const Tasks = () => {
-  const [tasks, setTasks] = useState([
-    { mainOp: "", subOp: "", weight: "", duration: "", frequency: "", repeat: "" },
-  ]);
+  const [tasks, setTasks] = useState([{
+    mainOp: "", subOp: "", weight: "", duration: "", frequency: "", repeat: ""
+  }]);
 
-  const navigate = useNavigate(); 
+  const navigate = useNavigate(); // Navigate function is here
 
+  // Handle changes in form fields
   const handleChange = (index, event) => {
     const newTasks = [...tasks];
     newTasks[index][event.target.name] =
@@ -26,35 +27,42 @@ const Tasks = () => {
     setTasks(newTasks);
   };
 
-
+  // Add new task
   const addTask = () => {
+    const newDate = new Date().toISOString().split('T')[0];  // إضافة التاريخ بشكل صحيح
     setTasks([
       ...tasks,
-      { mainOp: "", subOp: "", weight: "", duration: "", frequency: "", repeat: "" },
+      { mainOp: "", subOp: "", weight: "", duration: "", frequency: "", repeat: "", date: newDate }
     ]);
   };
+  
+
+  // Handle the next button click
   const handleNext = () => {
     for (let i = 0; i < tasks.length; i++) {
       const task = tasks[i];
-  
-      // Check if all required fields are filled
       if (!task.mainOp || !task.subOp || !task.duration || !task.frequency || !task.repeat) {
         alert("يرجى تعبئة جميع الحقول");
-        return; 
+        return;
       }
-      // Calculate actual frequency and check if it exceeds allowed limit
+  
       const actualFrequency = parseInt(task.duration) * parseInt(task.repeat);
       const maxAllowedFrequency = frequencyValues[task.frequency];
   
       if (actualFrequency > maxAllowedFrequency) {
-        alert("خطأ: الرجاء التاكد من ادخال البيانات (تكرار العمليات /الوقت المستغرق للعملية الواحدة");
-        return; 
+        alert("خطأ: الرجاء التاكد من ادخال البيانات");
+        return;
       }
     }
   
     localStorage.setItem("tasksData", JSON.stringify(tasks));
+    localStorage.setItem("mainOperations", JSON.stringify(mainOperations));
+    localStorage.setItem("subOperations", JSON.stringify(subOperations));
+    console.log("Data saved to localStorage:", tasks);
+
     navigate("/dashboard/task-confirm");
   };
+  
   
     // List of main operations
   const mainOperations = [
