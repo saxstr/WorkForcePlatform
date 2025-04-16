@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom"; 
 import "./Tasks.css";
+import Header from './Header';
 
 // Define frequency values for different task types
 const frequencyValues = {
@@ -132,6 +133,7 @@ const Tasks = () => {
 
   return (
     <div className="tasks-container">
+      <Header />
       <h2 className="title">إدارة المهام</h2>
       <table className="tasks-table">
         <thead>

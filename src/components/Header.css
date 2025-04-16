@@ -1,0 +1,46 @@
+/* Ensure the header is properly aligned and does not affect other components */
+.header-container {
+    display: flex;
+    align-items:normal;
+    justify-content: flex-start;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 25px;
+    box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.1);
+    height: 45px;
+    width: 200px; 
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    margin: 10px 0;
+    margin-right: 700px;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.user-icon {
+    width: 30px;
+    height: 30px;
+    background-color: #4CAF50;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.user-details {
+    font-size: 14px;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Adjust body padding to avoid overlap */
+
+
+
+

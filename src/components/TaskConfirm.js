@@ -52,8 +52,8 @@ const TaskConfirm = () => {
       </table>
 
       <div className="buttons-container">
+      <button className="previous-button" onClick={handlePrevious}>السابق</button>
         <button className="save-button" onClick={handleSave}>حفظ</button>
-        <button className="previous-button" onClick={handlePrevious}>السابق</button>
       </div>
     </div>
   );
