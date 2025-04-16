@@ -9,15 +9,12 @@ const Sidebar = () => {
   const navigate = useNavigate(); 
 
   
-  const handleHomeClick = () => {
-    navigate("/login"); 
-  };
   return (
     <div className="sidebar">
       <div className="sidebar-header">
         <img src={logo} alt="Ministry of Education" className="logo" />
       </div>
-
+      
       <ul>
       <li className={location.pathname === "/dashboard" ? "active" : ""}>
       <Link to="/login" className="home-btn">
@@ -62,6 +59,24 @@ const Sidebar = () => {
       </ul>
     </div>
   );
+
+  function EmpSidebar({ onLogin }) {
+  return (
+    <div className="sidebar">
+      <button className="login-button1" onClick={onLogin}>
+        دخول
+      </button>
+    </div>
+  );
+}
+<div className="app-container">
+  <Sidebar />
+  <div className="content-area">
+    {/* All the content goes here like <Employee /> */}
+  </div>
+</div>
+
+
 };
 
 export default Sidebar;

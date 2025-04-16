@@ -1,97 +1,114 @@
 .sidebar {
-    width: 250px;
-    height: 100vh;
-    background-color: #00BE5F; /*00BE5F لون فيقما*/
-    color: white;
-    position: fixed;
-    top: 0;
-    right: 0; 
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .sidebar-header {
-    text-align: center;
-    margin-bottom: 20px;
-  }
-  
-  .logo {
-    width: 210px; 
-    margin-bottom: -50px;
-  }
-  
+  width: 250px;
+  height: 100vh;
+  background-color: #00BE5F; /* لون فيقما */
+  color: white;
+  position: fixed;
+  top: 0;
+  right: 0;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 1000; /* keep it above content */
+}
 
-  .sidebar ul {
-    list-style-type: none;
-    padding: 0;
-    width: 100%;
-  }
-  
-  .sidebar ul li  {
-    display: flex;
-    align-items: center;
-    justify-content: center; 
-    padding: 12px;
-    width: 100%;
-    position: relative;
-  }
-  
-  .sidebar ul li a {
-    color: white;
-    text-decoration: none;
-    font-size: 16px;
-    display: flex;
-    align-items: center;
-    justify-content: center; 
-    padding: 12px;
-    border-radius: 8px;
-    width: 100%;
-    transition: 0.3s ease-in-out;
-  }
-  
-  .divider {
-    width: 90%;
-    height: 1px;
-    background-color: rgba(255, 255, 255, 0.4);
-    margin: 5px auto;
-  }
-  
-  
-  .icon {
-    margin-right: 10px;
-    font-size: 20px;
-  }
-  
+.sidebar-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.logo {
+  width: 210px;
+  margin-bottom: -50px;
+}
+
+.sidebar ul {
+  list-style-type: none;
+  padding: 0;
+  width: 100%;
+}
+
+.sidebar ul li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px;
+  width: 100%;
+  position: relative;
+}
+
+.sidebar ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px;
+  border-radius: 8px;
+  width: 100%;
+  transition: 0.3s ease-in-out;
+}
+
+.divider {
+  width: 90%;
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.4);
+  margin: 5px auto;
+}
+
+.icon {
+  margin-right: 10px;
+  font-size: 20px;
+}
+
 .active {
-    position: relative;
-    border-radius: 10px; 
-  }
-  
-  .active::after {
-    content: "";
-    position: absolute;
-    right: -8px;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 18px;
-    height: 90%;
-    background-color: white;
-    border-top-left-radius: 10px;
-    border-bottom-left-radius: 10px;
-    transition: 0.3s ease-in-out;
-  }
-  .logout button {
-    background-color: #00BE5F; 
-    color: white;  
-    font-size: 16px;
-    padding: 12px;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    width: 100%;  
-  }
-  
+  position: relative;
+  border-radius: 10px;
+}
 
-  
+.active::after {
+  content: "";
+  position: absolute;
+  right: -8px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 18px;
+  height: 90%;
+  background-color: white;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  transition: 0.3s ease-in-out;
+}
+
+.logout button {
+  background-color: #00BE5F;
+  color: white;
+  font-size: 16px;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  width: 100%;
+}
+
+
+/* ✅ ADD THIS TO SHIFT CONTENT LEFT OF SIDEBAR */
+.main-content {
+  margin-right: 250px; /* Matches sidebar width */
+  padding: 20px;
+  direction: rtl; /* For proper Arabic layout */
+  min-height: 100vh;
+  background-color: #f9f9f9; /* optional light background */
+}
+
+.app-container {
+  display: flex ;
+}
+
+.content-area {
+  margin-left: 50; /* ⬅️ Push content to the right of sidebar */
+  padding: 20px;
+  width: calc(100% - 100); /* ⬅️ Ensure it doesn’t overflow */
+}

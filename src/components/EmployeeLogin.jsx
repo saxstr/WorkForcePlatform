@@ -1,20 +1,27 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom'; 
 import './EmployeeLogin.css';
 import educationLogo from "../Assets/educationLogo-white.png"; 
+import { useNavigate } from 'react-router-dom';
+
 
 
 function EmployeeLogin() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [rememberMe, setRememberMe] = useState(false);
-
   const navigate = useNavigate();
+
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    navigate("/dashboard");
+  
+    // Later you can add actual login logic here (like checking credentials)
+  
+    // Redirect to dashboard
+    navigate('/dashboard');
   };
+  
 
   return (
     <div className="login-page">
@@ -38,7 +45,7 @@ function EmployeeLogin() {
                 <input 
                   type="email" 
                   id="email" 
-                  placeholder="mail@example.com" 
+                  placeholder="mail@gov.com"  
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                 />
@@ -53,7 +60,7 @@ function EmployeeLogin() {
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                   />
-                  <div className="password-requirements">Min. 8 characters</div>
+                  <div className="password-requirements">8 خانات كحد أدنى</div>
                   <button type="button" className="toggle-password">
                     {/* Eye icon SVG */}
                     <svg width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -72,13 +79,13 @@ function EmployeeLogin() {
                       onChange={(e) => setRememberMe(e.target.checked)}
                     />
                     <span className="checkmark"></span>
-                    <span>Keep me logged in</span>
+                    <span>تذكرني</span>
                   </label>
                 </div>
-                <a href="#" className="forgot-password">Forgot password?</a>
+                <a href="#" className="forgot-password">|نسيت كلمة المرور؟</a>
               </div>
 
-              <button type="submit" className="login-button1">دخول</button>
+              <button type="submit" className="login-button1"  onClick={() => navigate('/dashboard')}>دخول</button>
             </form>
           </div>
         </div>

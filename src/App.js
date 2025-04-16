@@ -8,35 +8,40 @@ import Sidebar from "./components/empSideBar";
 import Tasks from "./components/Tasks"; 
 import TaskConfirm from "./components/TaskConfirm"; 
 import TaskReview from './components/TaskReview';
-import Requests from "./components/Requests";
+import Employee from "./components/Employee";
 
 function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Navigate to="/login" />} /> {/* Redirect to login */}
-        
-        {/* Login pages */}
+        {/* Redirect root to login */}
+        <Route path="/" element={<Navigate to="/login" />} />
+
+        {/* Login routes */}
         <Route path="/login" element={<LoginSelection />} />
         <Route path="/login/employees" element={<EmployeeLogin />} />
         <Route path="/login/managers" element={<ManagerLogin />} />
 
-        {/* Dashboard with sidebar and content */}
-        <Route path="/dashboard/*" 
-          element={
-            <div className="app-container">
-              <Sidebar />
-              <div className="content">
-                <Routes>
-                  <Route path="tasks" element={<Tasks />} />
-                  <Route path="task-review" element={<TaskReview />} />
-                  <Route path="Requests" element={<Requests />} />
-                  <Route path="task-confirm" element={<TaskConfirm />} />
-                </Routes>
-              </div>
-            </div>
-          }
-        />
+        {/* Dashboard layout route */}
+        <Route
+  path="/dashboard/*"
+  element={
+    <div className="app-container">
+      <Sidebar />
+      <div className="content-area">
+        <Routes>
+          <Route path="employee" element={<Employee />} />
+          <Route path="tasks" element={<Tasks />} />
+          <Route path="task-review" element={<TaskReview />} />
+          <Route path="requests" element={<h1>Requests</h1>} />
+          <Route path="task-confirm" element={<TaskConfirm />} />
+          <Route path="" element={<h1>Welcome to the Dashboard</h1>} />
+        </Routes>
+      </div>
+    </div>
+  }
+/>
+
       </Routes>
     </Router>
   );
