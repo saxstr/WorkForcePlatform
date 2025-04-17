@@ -1,18 +1,17 @@
 .requests-container {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: right;
-  height: 40vh;
-  margin-right: 100px; 
+  flex-direction: column; /* ترتيب العناصر تحت بعض */
+  justify-content: flex-start;
+  gap: 20px; /* المسافة بين الأزرار */
+  margin-right: 10px;
   padding: 20px;
   box-sizing: border-box;
-  gap: 20px;
+  direction: rtl;
 }
 
 .request-box {
   width: 400px;
-  height: 60px;
+  height: 50px;
   display: flex;
   justify-content: flex-start;
   align-items: center;

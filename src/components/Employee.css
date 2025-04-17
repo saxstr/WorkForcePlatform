@@ -1,76 +1,68 @@
-/* Employee.css */
-
-.employee-container {
+.employee-page .employee-container {
   padding: 20px;
   direction: rtl;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-
-  /* ✅ This pushes content away from sidebar on the right */
   margin-right: 560px;
   min-height: 100vh;
   background-color: #f9f9f9;
   box-sizing: border-box;
   width: 100%;
+} 
+.employee-form {
+  margin-right: 250px; /* Adjusting content width to account for sidebar */
+  padding: 20px;
 }
-
-.title {
+.employee-page .title {
   text-align: center;
   margin-bottom: 20px;
   color: #138a72;
 }
 
-.employee-form {
+.employee-page .employee-form {
   display: flex;
-  
   flex-direction: column;
   gap: 30px;
 }
 
-.form-section {
+.employee-page .form-section {
   border: 1px solid #ddd;
   padding: 20px;
   border-radius: 8px;
   background-color: #fff;
 }
 
-legend {
-  font-weight: bold;
-  padding: 0 10px;
-  color: #333;
-}
-
-.form-grid {
+.employee-page .form-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 15px;
   margin-top: 15px;
 }
 
-label {
+.employee-page label {
   display: block;
   margin-bottom: 5px;
   color: #333;
   font-size: 14px;
 }
 
-input,
-select {
+.employee-page input,
+.employee-page select {
   width: 100%;
-  padding: 8px 10px;
+  padding: 8px 2px;
   border: 1px solid #ccc;
   border-radius: 6px;
   font-size: 14px;
   background-color: white;
 }
 
-.achievements-section {
+.employee-page .achievements-section {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
   margin-top: 15px;
 }
 
-.upload-box {
+.employee-page .upload-box {
   min-width: 200px;
   border: 2px dashed #bbb;
   padding: 20px;
@@ -80,27 +72,27 @@ select {
   flex: 1;
 }
 
-.upload-label {
+.employee-page .upload-label {
   font-weight: bold;
   display: block;
   margin-bottom: 10px;
 }
 
-.upload-note {
+.employee-page .upload-note {
   font-size: 12px;
   color: #888;
   margin-top: 10px;
 }
 
-.achievements-form {
+.employee-page .achievements-form {
   flex: 2;
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
 
-.submit-btn {
-  background-color: #138a72;
+.employee-page .submit-btn {
+  background-color: #00BE5F;
   color: white;
   border: none;
   padding: 10px 25px;
@@ -111,6 +103,6 @@ select {
   align-self: flex-start;
 }
 
-.submit-btn:hover {
+.employee-page .submit-btn:hover {
   background-color: #0e6e5b;
 }
