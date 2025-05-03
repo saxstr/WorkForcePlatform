@@ -17,7 +17,7 @@ const LoginSelection = () => {
         </div>
 
         <div className="content-section">
-          <h1 className="welcome-text">اهلا بكم في منصة إدارة الأعباء لـ365ـيوم</h1>
+          <h1 className="welcome-text">اهلا بكم في منصة إدارة الأعباء لـ240ـيوم</h1>
           <p className="welcome-description">
             حيث نرتقي بالكفاءة، نحقق الإنتاجية، وندعم اتخاذ القرار بذكاء.
           </p>

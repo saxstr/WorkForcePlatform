@@ -52,7 +52,7 @@ const Sidebar = () => {
         <div className="divider"></div>
 
         <li className={location.pathname === "/dashboard/logout" ? "active logout" : "logout"}>
-          <Link to="/dashboard/logout">
+          <Link to="/login">
             <FaSignOutAlt className="icon" /> تسجيل خروج
           </Link>
         </li>

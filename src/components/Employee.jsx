@@ -12,6 +12,10 @@ const Employee = () => {
           <fieldset className="form-section">
             <legend>المعلومات الشخصية</legend>
             <div className="form-grid">
+            <div>
+                <label>أسم الموظف</label>
+                <input type="text" placeholder="أدخل الاسم الثلاثي" />
+              </div>
               <div>
                 <label>السجل المدني</label>
                 <input type="text" placeholder="أدخل رقم السجل المدني" />
